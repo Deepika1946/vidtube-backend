@@ -6,7 +6,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://vidtube-frontend.vercel.app"],
+    origin: [
+      "http://localhost:3000",
+      "https://vidtube-frontend-6t1o.vercel.app",
+    ],
     credentials: true,
   })
 );
