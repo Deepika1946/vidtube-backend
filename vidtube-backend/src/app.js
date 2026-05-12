@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: ["http://localhost:3000", "https://vidtube-frontend.vercel.app"],
     credentials: true,
   })
 );
@@ -41,6 +41,7 @@ app.use("/api/v1/dashboard", dashboardRouter);
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
+
   return res.status(statusCode).json({
     success: false,
     statusCode,
